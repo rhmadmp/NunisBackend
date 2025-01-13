@@ -9,9 +9,9 @@ class ContactController extends Controller
 {
     function contact(Request $req){
         $contacts = new Contact;
-        $contacts->email = trim($req->input('email'), '"');
+        $contacts->email = trim($req->input('email'), '');
         $contacts ->message=$req->input('message');
-        // $contacts ->pictures=$req->input('pictures');
+        $contacts ->pictures=$req->input('pictures');
         $contacts ->save();
         return $contacts;
     }
